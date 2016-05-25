@@ -16,5 +16,5 @@ My change focuses on `index.html` and `index.jsx`, the original `css` files and 
 
 ##Run
 
-- Dev build: [http://localhost:8080/webpack-dev-server/dist](http://localhost:8080/webpack-dev-server/dist)
+- Dev build: [http://localhost:8080/dist](http://localhost:8080/dist)
 - Production build: directly open `./dist/index.html`

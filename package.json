@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/jsx/index/jsx",
   "scripts": {
-    "dev-build": "webpack-dev-server --progress --colors",
+    "dev-build": "webpack-dev-server --progress --colors --inline",
     "product-build": "webpack --progress --colors --watch"
   },
   "author": "",
