@@ -1,14 +1,21 @@
+import '../css/reset.css';
+import '../css/main.css';
+
+import $ from 'jquery';
+import 'jquery.transit';
+import buzz from 'node-buzz';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Sound {
     constructor() {
         var volume = 30;
-        this.soundJump = new buzz.sound("assets/sounds/sfx_wing.ogg");
-        this.soundScore = new buzz.sound("assets/sounds/sfx_point.ogg");
-        this.soundHit = new buzz.sound("assets/sounds/sfx_hit.ogg");
-        this.soundDie = new buzz.sound("assets/sounds/sfx_die.ogg");
-        this.soundSwoosh = new buzz.sound("assets/sounds/sfx_swooshing.ogg");
+        this.soundJump = new buzz.sound(require("../assets/sounds/sfx_wing.ogg"));
+        this.soundScore = new buzz.sound(require("../assets/sounds/sfx_point.ogg"));
+        this.soundHit = new buzz.sound(require("../assets/sounds/sfx_hit.ogg"));
+        this.soundDie = new buzz.sound(require("../assets/sounds/sfx_die.ogg"));
+        this.soundSwoosh = new buzz.sound(require("../assets/sounds/sfx_swooshing.ogg"));
         buzz.all().setVolume(volume);
     }
     playSoundJump() {
@@ -59,7 +66,7 @@ const BigScore = (props) => {
     return <div id="bigscore">
         {
             digits.map(function (digit, index) {
-                return <img key={"digit" + index} src={'assets/font_big_' + digit + '.png'} alt={digit}/>;
+                return <img key={"digit" + index} src={require('../assets/font_big_' + digit + '.png')} alt={digit}/>;
             })
         }
     </div>
@@ -106,7 +113,7 @@ class Medal extends React.Component {
     }
     render() {
         return <div id="medal" ref="medal" style={{ scale: this.props.scale, opacity: this.props.opacity }}>
-            {this.props.medal === null ? "" : <img src={"assets/medal_" + this.props.medal + ".png"} alt={"'" + this.props.medal + "'"} />}
+            {this.props.medal === null ? "" : <img src={require("../assets/medal_" + this.props.medal + ".png")} alt={"'" + this.props.medal + "'"} />}
         </div>
     }
 }
@@ -117,7 +124,7 @@ const CurrentScore = (props) => {
     return <div id="currentscore">
         {
             digits.map(function (digit, index) {
-                return <img key={"digit" + index} src={'assets/font_small_' + digit + '.png'} alt={digit}/>;
+                return <img key={"digit" + index} src={require('../assets/font_small_' + digit + '.png')} alt={digit}/>;
             })
         }
     </div>
@@ -128,7 +135,7 @@ const HighScore = (props) => {
     return <div id="highscore">
         {
             digits.map(function (digit, index) {
-                return <img key={"digit" + index} src={'assets/font_small_' + digit + '.png'} alt={digit}/>;
+                return <img key={"digit" + index} src={require('../assets/font_small_' + digit + '.png')} alt={digit}/>;
             })
         }
     </div>
@@ -156,7 +163,7 @@ class Replay extends React.Component {
     }
     render() {
         return <div id="replay" ref="replay" style={{ y: this.props.y, opacity: this.props.opacity }} onClick={this.handleClick.bind(this) }>
-            <img src="assets/replay.png" alt="replay" />
+            <img src={require("../assets/replay.png")} alt="replay" />
         </div>
     }
 }

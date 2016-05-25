@@ -2,10 +2,11 @@
   "name": "floppybird-react",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./src/jsx/index/jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server --progress --colors"
+    "dev-build": "webpack-dev-server --progress --colors",
+    "product-build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +19,13 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "jquery": "^2.2.4",
+    "jquery.transit": "^0.9.12",
+    "node-buzz": "^1.1.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.0"
   }
 }
