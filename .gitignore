@@ -218,4 +218,5 @@ pip-log.txt
 
 # Append by yajiex
 node_modules/
-dist/
+dist/*
+!dist/index.html
