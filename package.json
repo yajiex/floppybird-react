@@ -4,9 +4,8 @@
   "description": "",
   "main": "./src/jsx/index/jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev-build": "webpack-dev-server --progress --colors",
-    "product-build": "webpack"
+    "product-build": "webpack --progress --colors --watch"
   },
   "author": "",
   "license": "ISC",

@@ -1,4 +1,5 @@
 # Append by yajiex
+.idea/
 node_modules/
 dist/*
 !dist/index.html
