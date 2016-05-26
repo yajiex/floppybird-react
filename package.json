@@ -2,7 +2,7 @@
   "name": "floppybird-react",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/jsx/index/jsx",
+  "main": "./src/index/index.jsx",
   "scripts": {
     "dev-build": "webpack-dev-server --progress --colors --inline",
     "product-build": "webpack --progress --colors --watch"

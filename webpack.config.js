@@ -2,10 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/jsx/index.jsx'),
+  entry: path.resolve(__dirname, './src/index/index.jsx'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: 'http://localhost:8080'
   },
   module: {
     loaders: [
@@ -15,6 +16,14 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']
+        }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
         }
       },
       {
