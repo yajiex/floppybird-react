@@ -1,0 +1,11 @@
+.player
+{
+    left: 60px;
+    top: 200px;
+    position: absolute;
+    width: 34px;
+    height: 24px;
+    background-image: url('./assets/bird.png');
+
+    composes: animBird from '../../../../shared/css/animations.css';
+}

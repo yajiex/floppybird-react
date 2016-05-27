@@ -1,0 +1,46 @@
+.pipe
+{
+    position: absolute;
+    left: -100px;
+    width: 52px;
+    height: 100%;
+    z-index: 10;
+
+    composes: animPipe from '../../../../../shared/css/animations.css';
+}
+
+.pipeUpper
+{
+    position: absolute;
+    top: 0;
+    width: 52px;
+    background: url('./assets/pipe.png') center repeat-y;
+}
+
+.pipeUpper:after
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 52px;
+    height: 26px;
+    background-image: url('./assets/pipe-down.png');
+}
+
+.pipeLower
+{
+    position: absolute;
+    bottom: 0;
+    width: 52px;
+    background: url('./assets/pipe.png') center repeat-y;
+}
+
+.pipeLower:after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 26px;
+    background-image: url('./assets/pipe-up.png');
+}

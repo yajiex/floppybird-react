@@ -1,0 +1,14 @@
+.currentScore
+{
+    position: absolute;
+    top: 105px;
+    left: 107px;
+    width: 104px;
+    height: 14px;
+    text-align: right;
+}
+
+.currentScore img
+{
+    padding-left: 2px;
+}

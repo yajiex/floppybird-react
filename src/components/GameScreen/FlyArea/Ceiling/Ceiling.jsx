@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import styles from './Ceiling.css';
 
 export default class Ceiling extends React.Component {
     componentDidMount() {
@@ -12,7 +13,7 @@ export default class Ceiling extends React.Component {
     }
 
     render() {
-        return <div ref="ceiling" id="ceiling"
+        return <div ref="ceiling" className={styles.ceiling}
                     style={{animationPlayState: this.props.animationPlayState,WebkitAnimationPlayState: this.props.animationPlayState}}>
 
         </div>

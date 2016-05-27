@@ -7,6 +7,7 @@ import CurrentScore from './CurrentScore/CurrentScore.jsx';
 import HighScore from './HighScore/HighScore.jsx';
 import Medal from './Medal/Medal.jsx';
 import Replay from './Replay/Replay.jsx';
+import styles from './ScoreBoard.css';
 
 export default class ScoreBoard extends React.Component {
     triggerReplayClick() {
@@ -37,7 +38,7 @@ export default class ScoreBoard extends React.Component {
     }
 
     render() {
-        return <div id="scoreboard" ref="scoreBoard"
+        return <div className={styles.scoreBoard} ref="scoreBoard"
                     style={{ display: this.props.display, y: this.props.y, opacity: this.props.opacity }}>
             <Medal ref="medal" medal={this.props.medal} scale={this.props.medalScale}
                    opacity={this.props.medalOpacity}/>

@@ -2,6 +2,7 @@ import React from 'react';
 
 import $ from 'jquery';
 import 'jquery.transit';
+import styles from './Splash.css';
 
 export default class Splash extends React.Component {
     show() {
@@ -14,6 +15,6 @@ export default class Splash extends React.Component {
     }
 
     render() {
-        return <div id="splash" ref="splash"></div>
+        return <div className={styles.splash} ref="splash"></div>
     }
 }

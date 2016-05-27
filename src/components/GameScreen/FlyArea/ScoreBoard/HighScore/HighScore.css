@@ -1,0 +1,14 @@
+.highScore
+{
+    position: absolute;
+    top: 147px;
+    left: 107px;
+    width: 104px;
+    height: 14px;
+    text-align: right;
+}
+
+.highScore img
+{
+    padding-left: 2px;
+}

@@ -5,8 +5,7 @@ module.exports = {
   entry: path.resolve(__dirname, './src/index/index.jsx'),
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
-    publicPath: 'http://localhost:8080'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -28,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader',
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
         exclude: /node_moduels/
       },
       {

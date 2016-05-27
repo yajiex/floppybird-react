@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import styles from './Pipe.css';
 
 export default class Pipe extends React.Component {
     getPositionLeft() {
@@ -11,11 +12,11 @@ export default class Pipe extends React.Component {
     }
 
     render() {
-        return <div className="pipe" ref="pipe"
+        return <div className={styles.pipe} ref="pipe"
                     style={{ animationPlayState: this.props.animationPlayState, WebkitAnimationPlayState: this.props.animationPlayState }}>
-            <div ref="pipeUpper" className="pipe_upper" style={{ height: this.props.topHeight }}>
+            <div ref="pipeUpper" className={styles.pipeUpper} style={{ height: this.props.topHeight }}>
             </div>
-            <div className="pipe_lower" style={{ height: this.props.bottomHeight }}>
+            <div className={styles.pipeLower} style={{ height: this.props.bottomHeight }}>
             </div>
         </div>
     }

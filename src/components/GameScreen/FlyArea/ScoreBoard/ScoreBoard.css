@@ -1,0 +1,12 @@
+.scoreBoard
+{
+    position: absolute;
+    display: none;
+    opacity: 0;
+    top: 64px;
+    left: 43px;
+    width: 236px;
+    height: 280px;
+    background: url('./assets/scoreboard.png') no-repeat;
+    z-index: 1000;
+}

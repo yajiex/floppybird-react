@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import 'jquery.transit';
+import styles from './Player.css';
 
 export default class Player extends React.Component {
     getBoundingClientRect() {
@@ -14,7 +15,7 @@ export default class Player extends React.Component {
     }
 
     render() {
-        return <div ref="player" id="player" className="bird" style={{
+        return <div ref="player" className={styles.player} style={{
             y: this.props.y,
             top: this.props.top,
             transform: 'translate(0px, 0px) rotate(' + this.props.rotation + 'deg)',

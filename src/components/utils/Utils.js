@@ -17,5 +17,14 @@ export default class Utils {
         var expires = "expires=" + d.toGMTString();
         document.cookie = cname + "=" + cvalue + "; " + expires;
     }
-    
+
+    static isInCompatible() {
+        var isAndroid =  navigator.userAgent.match(/Android/i);;
+        var isBlackBerry = navigator.userAgent.match(/BlackBerry/i);
+        var isIOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        var isOpera = navigator.userAgent.match(/Opera Mini/i);
+        var isSafari = (navigator.userAgent.match(/OS X.*Safari/) && ! navigator.userAgent.match(/Chrome/));
+        var isWindows = navigator.userAgent.match(/IEMobile/i);
+        return isAndroid || isBlackBerry || isIOS || isOpera || isSafari || isWindows;
+    }
 }

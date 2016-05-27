@@ -1,0 +1,10 @@
+.land
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: #ded895 url('./assets/land.png') 0px 0px repeat-x;
+
+    composes: animLand from "../../../shared/css/animations.css";
+}

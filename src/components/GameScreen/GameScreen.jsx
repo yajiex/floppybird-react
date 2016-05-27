@@ -2,8 +2,9 @@ import React from 'react';
 
 import Land from './Land/Land.jsx';
 import FlyArea from './FlyArea/FlyArea.jsx';
-import CookieUtils from '../utils/Utils.js';
+import Utils from '../Utils/Utils.js';
 import Sound from '../Sound/Sound.js';
+import styles from './GameScreen.css';
 
 export default class GameScreen extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ export default class GameScreen extends React.Component {
         this.pipeWidth = 52;
         this.gravity = 0.25;
         this.jump = -4.6;
+        this.isInCompatiable = Utils.isInCompatible();
         this.sound = new Sound();
 
         this.showSplash();
@@ -51,7 +53,7 @@ export default class GameScreen extends React.Component {
     }
 
     showSplash() {
-        var savedScore = CookieUtils.getCookie("highScore");
+        var savedScore = Utils.getCookie("highScore");
         var highScore = savedScore === "" ? 0 : parseInt(savedScore);
 
         this.state = {
@@ -101,12 +103,15 @@ export default class GameScreen extends React.Component {
         clearInterval(this.state.loopPipeloop);
         this.setState({loopGameloop: null});
         this.setState({loopPipeloop: null});
-
-        this.sound.playSoundHit(function () {
-            this.sound.playSoundDie(function () {
-                this.showScore();
+        if (this.isInCompatiable) {
+            this.showScore();
+        } else {
+            this.sound.playSoundHit(function () {
+                this.sound.playSoundDie(function () {
+                    this.showScore();
+                }.bind(this));
             }.bind(this));
-        }.bind(this));
+        }
     }
 
     setMedal() {
@@ -140,7 +145,7 @@ export default class GameScreen extends React.Component {
 
         if (this.state.score > this.state.highScore) {
             this.setState({highScore: this.state.score});
-            CookieUtils.setCookie("highScore", this.state.highScore, 999);
+            Utils.setCookie("highScore", this.state.highScore, 999);
         }
 
         var wonMedal = this.setMedal();
@@ -261,8 +266,8 @@ export default class GameScreen extends React.Component {
     }
 
     render() {
-        return <div>
-            <div id="sky"
+        return <div className={styles.gameScreen}>
+            <div className={styles.sky}
                  style={{ animationPlayState: this.state.animationPlayState, WebkitAnimationPlayState: this.state.animationPlayState }}>
                 <FlyArea ref="flyArea"
 

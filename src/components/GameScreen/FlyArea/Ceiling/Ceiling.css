@@ -1,0 +1,10 @@
+.ceiling
+{
+    position: absolute;
+    top: -16px;
+    height: 16px;
+    width: 100%;
+    background: url('./assets/ceiling.png') repeat-x;
+
+    composes: animCeiling from '../../../../shared/css/animations.css';
+}

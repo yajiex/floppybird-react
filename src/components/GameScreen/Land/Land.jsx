@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import styles from './Land.css';
 
 export default class Land extends React.Component {
     componentDidMount() {
@@ -11,9 +12,8 @@ export default class Land extends React.Component {
     }
 
     render() {
-        return <div ref="land" id="land"
+        return <div ref="land" className={styles.land}
                     style={{ animationPlayState: this.props.animationPlayState, WebkitAnimationPlayState: this.props.animationPlayState }}>
-            <div id="debug"></div>
         </div>
     }
 }

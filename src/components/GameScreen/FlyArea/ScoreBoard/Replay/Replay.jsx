@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import 'jquery.transit';
+import styles from './Replay.css';
 
 export default class Replay extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class Replay extends React.Component {
     }
 
     render() {
-        return <div id="replay" ref="replay" style={{ y: this.props.y, opacity: this.props.opacity }}
+        return <div className={styles.replay} ref="replay" style={{ y: this.props.y, opacity: this.props.opacity }}
                     onClick={this.handleClick.bind(this) }>
             <img src={require("./assets/replay.png")} alt="replay"/>
         </div>

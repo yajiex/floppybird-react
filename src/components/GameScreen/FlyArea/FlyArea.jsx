@@ -8,6 +8,7 @@ import BigScore from './BigScore/BigScore.jsx';
 import Splash from './Splash/Splash.jsx';
 import ScoreBoard from './ScoreBoard/ScoreBoard.jsx';
 import Pipes from './Pipes/Pipes.jsx';
+import styles from './FlyArea.css';
 
 export default class FlyArea extends React.Component {
     componentDidMount() {
@@ -83,7 +84,7 @@ export default class FlyArea extends React.Component {
     }
 
     render() {
-        return <div id="flyarea" ref="flyArea">
+        return <div className={styles.flyArea} ref="flyArea">
             <Ceiling ref="ceiling" animationPlayState={this.props.animationPlayState}/>
             <Player ref="player"
                     top={this.props.playerTop}

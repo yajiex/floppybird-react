@@ -1,0 +1,13 @@
+.bigScore
+{
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    z-index: 100;
+}
+
+.bigScore img
+{
+    display: inline-block;
+    padding: 1px;
+}

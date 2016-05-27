@@ -1,13 +1,18 @@
 import buzz from 'node-buzz';
+import sfxWing from './assets/sfx_wing.ogg';
+import sfxHit from './assets/sfx_hit.ogg';
+import sfxPoint from './assets/sfx_point.ogg';
+import sfxDie from './assets/sfx_die.ogg';
+import sfxSwooshing from './assets/sfx_swooshing.ogg';
 
 export default class Sound {
     constructor() {
         var volume = 30;
-        this.soundJump = new buzz.sound(require("./assets/sfx_wing.ogg"));
-        this.soundScore = new buzz.sound(require("./assets/sfx_point.ogg"));
-        this.soundHit = new buzz.sound(require("./assets/sfx_hit.ogg"));
-        this.soundDie = new buzz.sound(require("./assets/sfx_die.ogg"));
-        this.soundSwoosh = new buzz.sound(require("./assets/sfx_swooshing.ogg"));
+        this.soundJump = new buzz.sound(sfxWing);
+        this.soundScore = new buzz.sound(sfxPoint);
+        this.soundHit = new buzz.sound(sfxHit);
+        this.soundDie = new buzz.sound(sfxDie);
+        this.soundSwoosh = new buzz.sound(sfxSwooshing);
         buzz.all().setVolume(volume);
     }
 
