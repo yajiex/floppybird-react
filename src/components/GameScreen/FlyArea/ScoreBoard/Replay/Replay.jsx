@@ -1,11 +1,14 @@
+/* eslint global-require: 0 */
+
 import React from 'react';
 import $ from 'jquery';
 import 'jquery.transit';
 import styles from './Replay.css';
 
 export default class Replay extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
   }
 
   triggerClick() {
@@ -13,24 +16,34 @@ export default class Replay extends React.Component {
   }
 
   handleClick() {
-    if (!this.replayclickable) {
-      return;
-    } else {
+    if (this.replayclickable) {
       this.replayclickable = false;
+      this.props.onClick();
     }
-
-    this.props.onClick();
   }
 
   show() {
-    $(this.refs.replay).transition({y: "0px", opacity: 1}, 600, 'ease');
+    $(this.refs.replay).transition({ y: '0px', opacity: 1 }, 600, 'ease');
     this.replayclickable = true;
   }
 
   render() {
-    return <div className={styles.replay} ref="replay" style={{ y: this.props.y, opacity: this.props.opacity }}
-                onClick={this.handleClick.bind(this) }>
-      <img src={require("./assets/replay.png")} alt="replay"/>
-    </div>
+    return (<div
+      className={styles.replay}
+      ref="replay"
+      style={{ y: this.props.y, opacity: this.props.opacity }}
+      onClick={this.handleClick}
+    >
+      <img
+        src={require('./assets/replay.png')}
+        alt="replay"
+      />
+    </div>);
   }
 }
+
+Replay.propTypes = {
+  onClick: React.PropTypes.func,
+  y: React.PropTypes.number,
+  opacity: React.PropTypes.number,
+};

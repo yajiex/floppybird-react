@@ -6,7 +6,7 @@ export default class Pipes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pipes: []
+      pipes: [],
     };
     this.pipes = [];
     this.index = 0;
@@ -19,11 +19,16 @@ export default class Pipes extends React.Component {
     if (this.state.pipes.length !== nextState.pipes.length) {
       return true;
     }
-    if (this.state.pipes[0] && nextState.pipes[0] && this.state.pipes[0].refName !== nextState.pipes[0].refName) {
+    if (this.state.pipes[0] && nextState.pipes[0]
+      && this.state.pipes[0].refName !== nextState.pipes[0].refName) {
       return true;
     }
 
     return false;
+  }
+
+  getPipesCount() {
+    return this.pipes.length;
   }
 
   getNextPipeUpper() {
@@ -32,11 +37,7 @@ export default class Pipes extends React.Component {
 
   initialPipesCount() {
     this.pipes = [];
-    this.setState({pipes: []});
-  }
-
-  getPipesCount() {
-    return this.pipes.length;
+    this.setState({ pipes: [] });
   }
 
   slicePipes() {
@@ -45,27 +46,33 @@ export default class Pipes extends React.Component {
 
   updatePipes(newPipeProp) {
     // Filter refNames, return an array whose left > -100
-    var pipes = this.state.pipes.filter(function (pipe) {
-      return this.refs[pipe.refName].getPositionLeft() > -100;
-    }.bind(this));
+    const pipes = this.state.pipes.filter(
+      (pipe) => this.refs[pipe.refName].getPositionLeft() > -100);
 
-    var obj = Object.assign(newPipeProp, {refName: "pipe" + this.index++});
-    this.setState({pipes: pipes.concat(obj)});
+    const obj = Object.assign(newPipeProp, { refName: `pipe${this.index++}` });
+    this.setState({ pipes: pipes.concat(obj) });
 
     this.pipes.push(obj);
   }
 
   render() {
-    var animationPlayState = this.props.animationPlayState;
-    return <div>
+    const animationPlayState = this.props.animationPlayState;
+    return (<div>
       {
-        this.state.pipes.map(function (pipe) {
-          return <Pipe ref={pipe.refName} key={pipe.refName}
-                       topHeight={pipe.topHeight}
-                       bottomHeight={pipe.bottomHeight}
-                       animationPlayState={animationPlayState}/>;
-        })
+        this.state.pipes.map((pipe) => (
+          <Pipe
+            ref={pipe.refName}
+            key={pipe.refName}
+            topHeight={pipe.topHeight}
+            bottomHeight={pipe.bottomHeight}
+            animationPlayState={animationPlayState}
+          />)
+        )
       }
-    </div>
+    </div>);
   }
 }
+
+Pipes.propTypes = {
+  animationPlayState: React.PropTypes.string,
+};

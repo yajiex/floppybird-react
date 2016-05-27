@@ -12,12 +12,22 @@ export default class Pipe extends React.Component {
   }
 
   render() {
-    return <div className={styles.pipe} ref="pipe"
-                style={{ animationPlayState: this.props.animationPlayState, WebkitAnimationPlayState: this.props.animationPlayState }}>
+    return (<div
+      className={styles.pipe}
+      ref="pipe"
+      style={{ animationPlayState: this.props.animationPlayState,
+      WebkitAnimationPlayState: this.props.animationPlayState }}
+    >
       <div ref="pipeUpper" className={styles.pipeUpper} style={{ height: this.props.topHeight }}>
       </div>
       <div className={styles.pipeLower} style={{ height: this.props.bottomHeight }}>
       </div>
-    </div>
+    </div>);
   }
 }
+
+Pipe.propTypes = {
+  animationPlayState: React.PropTypes.string,
+  topHeight: React.PropTypes.number,
+  bottomHeight: React.PropTypes.number,
+};

@@ -12,8 +12,14 @@ export default class Land extends React.Component {
   }
 
   render() {
-    return <div ref="land" className={styles.land}
-                style={{ animationPlayState: this.props.animationPlayState, WebkitAnimationPlayState: this.props.animationPlayState }}>
-    </div>
+    return (<div
+      ref="land"
+      className={styles.land}
+      style={{ animationPlayState: this.props.animationPlayState,
+      WebkitAnimationPlayState: this.props.animationPlayState }}
+    >
+    </div>);
   }
 }
+
+Land.propTypes = { animationPlayState: React.PropTypes.string };

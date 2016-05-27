@@ -4,7 +4,7 @@ import styles from './Ceiling.css';
 
 export default class Ceiling extends React.Component {
   componentDidMount() {
-    var ceiling = $(this.refs.ceiling);
+    const ceiling = $(this.refs.ceiling);
     this.topHeight = ceiling.offset().top + ceiling.height();
   }
 
@@ -13,9 +13,17 @@ export default class Ceiling extends React.Component {
   }
 
   render() {
-    return <div ref="ceiling" className={styles.ceiling}
-                style={{animationPlayState: this.props.animationPlayState,WebkitAnimationPlayState: this.props.animationPlayState}}>
+    return (<div
+      ref="ceiling"
+      className={styles.ceiling}
+      style={{ animationPlayState: this.props.animationPlayState,
+      WebkitAnimationPlayState: this.props.animationPlayState }}
+    >
 
-    </div>
+    </div>);
   }
 }
+
+Ceiling.propTypes = {
+  animationPlayState: React.PropTypes.string,
+};
