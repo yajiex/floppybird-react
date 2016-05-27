@@ -6,36 +6,36 @@ import sfxDie from './assets/sfx_die.ogg';
 import sfxSwooshing from './assets/sfx_swooshing.ogg';
 
 export default class Sound {
-    constructor() {
-        var volume = 30;
-        this.soundJump = new buzz.sound(sfxWing);
-        this.soundScore = new buzz.sound(sfxPoint);
-        this.soundHit = new buzz.sound(sfxHit);
-        this.soundDie = new buzz.sound(sfxDie);
-        this.soundSwoosh = new buzz.sound(sfxSwooshing);
-        buzz.all().setVolume(volume);
-    }
+  constructor() {
+    var volume = 30;
+    this.soundJump = new buzz.sound(sfxWing);
+    this.soundScore = new buzz.sound(sfxPoint);
+    this.soundHit = new buzz.sound(sfxHit);
+    this.soundDie = new buzz.sound(sfxDie);
+    this.soundSwoosh = new buzz.sound(sfxSwooshing);
+    buzz.all().setVolume(volume);
+  }
 
-    playSoundJump() {
-        this.soundJump.stop();
-        this.soundJump.play();
-    }
+  playSoundJump() {
+    this.soundJump.stop();
+    this.soundJump.play();
+  }
 
-    playSoundScore() {
-        this.soundScore.stop();
-        this.soundScore.play();
-    }
+  playSoundScore() {
+    this.soundScore.stop();
+    this.soundScore.play();
+  }
 
-    playSoundHit(callback) {
-        this.soundHit.play().bindOnce("ended", callback);
-    }
+  playSoundHit(callback) {
+    this.soundHit.play().bindOnce("ended", callback);
+  }
 
-    playSoundDie(callback) {
-        this.soundDie.play().bindOnce("ended", callback);
-    }
+  playSoundDie(callback) {
+    this.soundDie.play().bindOnce("ended", callback);
+  }
 
-    playSoundSwoosh() {
-        this.soundSwoosh.stop();
-        this.soundSwoosh.play();
-    }
+  playSoundSwoosh() {
+    this.soundSwoosh.stop();
+    this.soundSwoosh.play();
+  }
 }

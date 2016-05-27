@@ -4,33 +4,33 @@ import 'jquery.transit';
 import styles from './Replay.css';
 
 export default class Replay extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
+  }
+
+  triggerClick() {
+    $(this.refs.replay).click();
+  }
+
+  handleClick() {
+    if (!this.replayclickable) {
+      return;
+    } else {
+      this.replayclickable = false;
     }
 
-    triggerClick() {
-        $(this.refs.replay).click();
-    }
+    this.props.onClick();
+  }
 
-    handleClick() {
-        if (!this.replayclickable) {
-            return;
-        } else {
-            this.replayclickable = false;
-        }
+  show() {
+    $(this.refs.replay).transition({y: "0px", opacity: 1}, 600, 'ease');
+    this.replayclickable = true;
+  }
 
-        this.props.onClick();
-    }
-
-    show() {
-        $(this.refs.replay).transition({y: "0px", opacity: 1}, 600, 'ease');
-        this.replayclickable = true;
-    }
-
-    render() {
-        return <div className={styles.replay} ref="replay" style={{ y: this.props.y, opacity: this.props.opacity }}
-                    onClick={this.handleClick.bind(this) }>
-            <img src={require("./assets/replay.png")} alt="replay"/>
-        </div>
-    }
+  render() {
+    return <div className={styles.replay} ref="replay" style={{ y: this.props.y, opacity: this.props.opacity }}
+                onClick={this.handleClick.bind(this) }>
+      <img src={require("./assets/replay.png")} alt="replay"/>
+    </div>
+  }
 }

@@ -8,6 +8,7 @@ My change focuses on `index.html` and `index.jsx`, the original `css` files and 
 - Clone the repo: `git clone https://github.com/yajiex/floppybird-react.git`
 - Install the dependencies: `npm install --save-dev`
 - Install dev tools: `npm install webpack-dev-server -g`
+- **Optional (Not sure why installed locally not work)** Install ESLint: `npm install -g --no-optional eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint`
 
 ##Build
 

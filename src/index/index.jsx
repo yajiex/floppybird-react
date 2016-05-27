@@ -6,4 +6,4 @@ import ReactDOM from 'react-dom';
 
 import GameScreen from '../components/GameScreen/GameScreen.jsx';
 
-ReactDOM.render(<GameScreen/>, document.getElementById("gameContainer"));
+ReactDOM.render(<GameScreen />, document.getElementById('gameContainer'));
