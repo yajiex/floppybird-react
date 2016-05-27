@@ -18,3 +18,109 @@ My change focuses on `index.html` and `index.jsx`, the original `css` files and 
 
 - Dev build: [http://localhost:8080/dist](http://localhost:8080/dist)
 - Production build: directly open `./dist/index.html`
+
+##Architecture
+
+    ├───dist
+    │       bundle.js
+    │       index.html
+    │
+    └───src
+        ├───components
+        │   ├───GameScreen
+        │   │   │   GameScreen.css
+        │   │   │   GameScreen.jsx
+        │   │   │
+        │   │   ├───assets
+        │   │   │
+        │   │   ├───FlyArea
+        │   │   │   │   FlyArea.css
+        │   │   │   │   FlyArea.jsx
+        │   │   │   │
+        │   │   │   ├───BigScore
+        │   │   │   │   │   BigScore.css
+        │   │   │   │   │   BigScore.jsx
+        │   │   │   │   │
+        │   │   │   │   └───assets
+        │   │   │   │
+        │   │   │   ├───Ceiling
+        │   │   │   │   │   Ceiling.css
+        │   │   │   │   │   Ceiling.jsx
+        │   │   │   │   │
+        │   │   │   │   └───assets
+        │   │   │   │
+        │   │   │   ├───Pipes
+        │   │   │   │   │   Pipes.jsx
+        │   │   │   │   │
+        │   │   │   │   └───Pipe
+        │   │   │   │       │   Pipe.css
+        │   │   │   │       │   Pipe.jsx
+        │   │   │   │       │
+        │   │   │   │       └───assets
+        │   │   │   │
+        │   │   │   ├───Player
+        │   │   │   │   │   Player.css
+        │   │   │   │   │   Player.jsx
+        │   │   │   │   │
+        │   │   │   │   └───assets
+        │   │   │   │
+        │   │   │   ├───ScoreBoard
+        │   │   │   │   │   ScoreBoard.css
+        │   │   │   │   │   ScoreBoard.jsx
+        │   │   │   │   │
+        │   │   │   │   ├───assets
+        │   │   │   │   │
+        │   │   │   │   ├───CurrentScore
+        │   │   │   │   │   │   CurrentScore.css
+        │   │   │   │   │   │   CurrentScore.jsx
+        │   │   │   │   │   │
+        │   │   │   │   │   └───assets
+        │   │   │   │   │
+        │   │   │   │   ├───HighScore
+        │   │   │   │   │   │   HighScore.css
+        │   │   │   │   │   │   HighScore.jsx
+        │   │   │   │   │   │
+        │   │   │   │   │   └───assets
+        │   │   │   │   │
+        │   │   │   │   ├───Medal
+        │   │   │   │   │   │   Medal.css
+        │   │   │   │   │   │   Medal.jsx
+        │   │   │   │   │   │
+        │   │   │   │   │   └───assets
+        │   │   │   │   │
+        │   │   │   │   └───Replay
+        │   │   │   │       │   Replay.css
+        │   │   │   │       │   Replay.jsx
+        │   │   │   │       │
+        │   │   │   │       └───assets
+        │   │   │   │
+        │   │   │   └───Splash
+        │   │   │       │   Splash.css
+        │   │   │       │   Splash.jsx
+        │   │   │       │
+        │   │   │       └───assets
+        │   │   │
+        │   │   └───Land
+        │   │       │   Land.css
+        │   │       │   Land.jsx
+        │   │       │
+        │   │       └───assets
+        │   │
+        │   ├───Sound
+        │   │   │   Sound.js
+        │   │   │
+        │   │   └───assets
+        │   │
+        │   └───Utils
+        │           Utils.js
+        │
+        ├───index
+        │   │   index.jsx
+        │   │
+        │   └───css
+        │           index.css
+        │           reset.css
+        │
+        └───shared
+            └───css
+                    animations.css
