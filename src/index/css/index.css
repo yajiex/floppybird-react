@@ -23,8 +23,6 @@
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
-   /* gpu acceleration */
-   -webkit-transform: translate3d(0,0,0);
    /* select disable */
    -webkit-touch-callout: none;
    -webkit-user-select: none;
