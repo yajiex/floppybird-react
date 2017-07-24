@@ -1,26 +1,26 @@
-#Floppy Bird React
+# Floppy Bird React
 
 This project is written with [React](https://facebook.github.io/react/index.html), it is a fork of https://github.com/nebez/floppybird, the original project is written with primitive HTML/CSS/JavaScript.
 My change focuses on `index.html` and `index.jsx`, the original `css` files and assets files keep unchanged.
 
-##Setup
+## Setup
 
 - Clone the repo: `git clone https://github.com/yajiex/floppybird-react.git`
 - Install the dependencies: `npm install --save-dev`
 - Install dev tools: `npm install webpack-dev-server -g`
 - **Optional (Not sure why installed locally not work)** Install ESLint: `npm install -g --no-optional eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y eslint`
 
-##Build
+## Build
 
 - Dev build: `npm run dev-build`
 - Production build: `npm run product-build`
 
-##Run
+## Run
 
 - Dev build: [http://localhost:8080/dist](http://localhost:8080/dist)
 - Production build: directly open `./dist/index.html`
 
-##Architecture
+## Architecture
 
     ├───dist
     │       bundle.js
